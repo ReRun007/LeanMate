@@ -8,6 +8,8 @@ import { Ionicons } from '@expo/vector-icons';
 import TeacherHomeScreen from '../screens/teacher/TeacherHomeScreen';
 import TeacherProfileScreen from '../screens/teacher/TeacherProfileScreen';
 import ClassroomDetailsScreen from '../screens/teacher/ClassroomDetailsScreen';
+import QuizManagementScreen from '../screens/teacher/QuizManagementScreen';
+import EditQuizScreen from '../screens/teacher/EditQuizScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -36,17 +38,30 @@ function TeacherTabNavigator() {
 export default function TeacherNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="TeacherTabs" 
-        component={TeacherTabNavigator} 
+      <Stack.Screen
+        name="TeacherTabs"
+        component={TeacherTabNavigator}
         options={{ headerShown: false }}
       />
-      <Stack.Screen 
-        name="ClassroomDetails" 
-        component={ClassroomDetailsScreen} 
+      <Stack.Screen
+        name="ClassroomDetails"
+        component={ClassroomDetailsScreen}
         options={({ route }) => ({ title: route.params?.classroomName || 'Classroom' })}
       />
-      {/* เพิ่ม Screens อื่นๆ ที่นี่ */}
+      <Stack.Screen
+        name="QuizManagement"
+        component={QuizManagementScreen}
+        options={{ title: 'Quiz Management' }}
+      />
+
+      <Stack.Screen
+        name="EditQuiz"
+        component={EditQuizScreen}
+        options={({ route }) => ({
+          title: 'Edit Quiz',
+          headerShown: true
+        })}
+      />
     </Stack.Navigator>
   );
 }

@@ -9,6 +9,10 @@ import StudentHomeScreen from '../screens/student/StudentHomeScreen';
 import StudentProfileScreen from '../screens/student/StudentProfileScreen';
 import StudentClassroomDetailsScreen from '../screens/student/StudentClassroomDetailsScreen';
 import StudentQuizScreen from '../screens/student/StudentQuizScreen';
+import LessonDetailScreen from '../screens/student/LessonDetailScreen';
+import QuizScreen from '../screens/student/QuizScreen';
+
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -37,22 +41,32 @@ function StudentTabNavigator() {
 export default function StudentNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="StudentTabs" 
-        component={StudentTabNavigator} 
+      <Stack.Screen
+        name="StudentTabs"
+        component={StudentTabNavigator}
         options={{ headerShown: false }}
       />
-      <Stack.Screen 
-        name="ClassroomDetails" 
-        component={StudentClassroomDetailsScreen} 
+      <Stack.Screen
+        name="ClassroomDetails"
+        component={StudentClassroomDetailsScreen}
         options={({ route }) => ({ title: route.params?.classroomName || 'Classroom' })}
       />
-      <Stack.Screen 
-        name="Quiz" 
-        component={StudentQuizScreen} 
-        options={{ title: 'Quiz' }}
+
+      <Stack.Screen
+        name="LessonDetail"
+        component={LessonDetailScreen}
+        options={({ route }) => ({ title: route.params?.lesson?.title || 'Lesson' })}
       />
-      {/* เพิ่ม Screens อื่นๆ ที่นี่ */}
+      <Stack.Screen
+        name="Quiz"
+        component={QuizScreen}
+        options={({ route }) => ({
+          title: 'Quiz',
+          headerShown: true,
+          // Disable back button during quiz
+          headerLeft: () => null
+        })}
+      />
     </Stack.Navigator>
   );
 }
