@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1078776578060",
+    "firebase_url": "https://arproject-b2e7b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "arproject-b2e7b",
+    "storage_bucket": "arproject-b2e7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078776578060:android:b407d257dcf9625b49ee29",
+        "android_client_info": {
+          "package_name": "com.vorakan.leanmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUqCu2bN3rZO1YxNJCksgVihp5bSZjPRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
